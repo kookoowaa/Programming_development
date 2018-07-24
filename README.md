@@ -1,2 +1,2 @@
-# Programming_development
+# Python programming
 Python (to be updated)
