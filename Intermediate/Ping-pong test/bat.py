@@ -1,7 +1,7 @@
 # 이 파일은 원래 MyPong을 위해 만든 Bat 클래스입니다.
 # 이 클래스는 Bat의 처리 공간을 2D 직사각형으로 정의합니다.
 
-import table_04
+import table
 
 class Bat:
     #### 생성자
@@ -24,7 +24,6 @@ class Bat:
         collision_direction = ""
         collision = False
         feel = 5
-        
         # 배트 변수:
         top = self.y_posn
         bottom = self.y_posn + self.height
@@ -32,7 +31,6 @@ class Bat:
         right = self.x_posn + self.width
         v_centre = top + (self.height/2)
         h_centre = left + (self.width/2)
-        
         # 공 변수:
         top_b = ball.y_posn
         bottom_b = ball.y_posn + ball.height
@@ -60,6 +58,7 @@ class Bat:
             elif((top_b > top-r) and (bottom_b < bottom+r) and (left_b < left) and (right_b >= left)):
                 collision_direction = "W"
                 ball.x_speed = -abs(ball.x_speed)
+
             else:
                 collision_direction = "miss"
 

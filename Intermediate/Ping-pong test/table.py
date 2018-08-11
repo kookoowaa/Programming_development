@@ -21,6 +21,10 @@ class Table:
         if(horizontal_net):
             self.canvas.create_line(0, self.height/2, self.width, self.height/2, width=2, fill=net_colour, dash=(15, 23))
 
+        # 득점판 추가:
+        font = ("monaco", 72)
+        self.scoreboard = self.canvas.create_text(300, 65, font=font, fill = "darkgreen")
+
     #### 메서드
     # Canvas에 직사각형을 추가하는 도구:
     def draw_rectangle(self, rectangle):
@@ -49,3 +53,10 @@ class Table:
 
     def change_item_colour(self, item, c):
         self.canvas.itemconfigure(item, fill=c)
+
+    # canvas에 득점판을 추가하는 도구:
+    def draw_score(self, left, right):
+        scores = str(right) + "  " + str(left)
+        self.canvas.itemconfigure(self.scoreboard, text=scores)
+
+    
