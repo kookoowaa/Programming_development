@@ -1,2 +1,2 @@
 # Python programming
-Python (to be updated)
+repository relocated(to be removed Jan. 2020)
