@@ -51,7 +51,35 @@
 
 ## 2. List Comprehensions
 
+- `List Comprehensions`는 한줄에 `for-loop`를 돌리는 방법임
 
+- 개인적으로도 Feature 전처리 때 자주 쓰는 기능이며 좀더 설명하기 전에 바로 예제를 통해 사용법을 보는 것이 더 나을 것 같음:
+
+  ```python
+  lst = ['Acer', 'Asus', 'Lenovo', 'HP']
+  
+  # regular function
+  def starts_with_a(lst):
+      valids = []
+   
+      for word in lst:
+          if word[0].lower() == 'a':
+              valids.append(word)
+   
+      return valids
+   
+   
+  # list comprehension
+  lst_comp = [word for word in lst if word[0].lower() == 'a']
+  
+  # results
+  print('starts_with_a: {}'.format(starts_with_a(lst)))
+  print('list_comprehension: {}'.format(lst_comp))
+  >>> starts_with_a: ['Acer', 'Asus']
+  >>> list_comprehension: ['Acer', 'Asus']
+  ```
+
+- `lst_comp`를 보면 반복할 object, 반복할 object가 담겨있는 리스트, 그리고 if문으로 조건을 거는 것까지 한줄에 담아서 for문을 간략하게 생성
 
 ## 3. Zip
 
