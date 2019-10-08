@@ -34,4 +34,7 @@ ___
   profile.to_file(output_file="output.html")
   ```
 
-  
+
+___
+
+- 참조: https://towardsdatascience.com/exploring-your-data-with-just-1-line-of-python-4b35ce21a82d
