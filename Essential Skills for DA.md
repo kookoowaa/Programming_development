@@ -110,4 +110,4 @@
 
 
 참조: [3 Essential Python Skills for Data Scientists](https://towardsdatascience.com/3-essential-python-skills-for-data-scientists-b642a1397ae3)
-
+참조2: [3 Advanced Python Functions for Data Scientists](https://towardsdatascience.com/3-advanced-python-functions-for-data-scientists-f869016da63a)
