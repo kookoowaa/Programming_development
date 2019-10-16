@@ -107,7 +107,60 @@
 
 - 동일한 로직을 for문으로 구현하는 것도 가능하지만, `Zip` 기능을 활용하여 매우 간단하게 동일 기능 구현
 
+## 4. Map
+- `map()`도 python built-in function으로, 여타 function을 리스트나 딕셔너리와 같은 sequence element에 적용시킴
+- `map()`을 사용하지 않더라도 리스트에 function을 적용하는 게 불가능 하지 않지만, python 방식으로 직관적이고 보기 편하게 함수를 적용 가능
+- 자세한 사용법은 아래 예제를 참조:
+```python
+nums = [1, 2, 3, 4, 5]
+
+# 제곱 계산 함수
+def square_num(x): 
+    return x**2
+    
+# 일반적인 함수 적용 방법
+squares = []
+for num in nums:
+    squares.append(square_num(num))
+print('Non-Pythonic Approach: ', squares)
+
+# pythonic 방법
+x = map(square_num, nums)
+print('Pythonic Approach: ', list(x))
+
+
+>>> Non-Pythonic Approach: [1, 4, 9, 16, 25] 
+>>> Pythonic Approach: [1, 4, 9, 16, 25]
+```
+
+## 5. Filter
+- `filter()` 함수는, sequence element에 적용한다는 점에서 `map()`과 유사
+- 차이점은 1) `filter()`에 적용할 수 있는 함수는 `True / False`를 반환하는 함수여야 하며, 2) 결과는 `True`에 해당하는 값만 반환한다는 점임
+- 아래 예제를 보면 쉽게 이해할 수 있음:
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# 짝수 판별 함수
+def even(x):
+    return x % 2 == 0
+    
+# 일반적인 방법
+even_nums = []
+for num in numbers:
+    if even(num):
+        even_nums.append(num)
+print('Non-Pythonic Approach: ', even_nums)
+
+# pythonic 방법
+even_n = filter(even, numbers)
+print('Pythonic Approach: ', list(even_n))
+
+
+>>> Non-Pythonic Approach: [2, 4, 6, 8, 10]
+>>> Pythonic Approach: [2, 4, 6, 8, 10]
+```
 
 
 참조: [3 Essential Python Skills for Data Scientists](https://towardsdatascience.com/3-essential-python-skills-for-data-scientists-b642a1397ae3)
+
 참조2: [3 Advanced Python Functions for Data Scientists](https://towardsdatascience.com/3-advanced-python-functions-for-data-scientists-f869016da63a)
